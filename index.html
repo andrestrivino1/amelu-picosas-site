@@ -561,5 +561,13 @@
   </div>
 </footer>
 
+<!-- Contador de visitas privado (Abacus): suma en silencio, no se muestra a los visitantes -->
+<script>
+(function () {
+  try { if (sessionStorage.getItem('amelu_visit')) return; sessionStorage.setItem('amelu_visit', '1'); } catch (e) {}
+  try { fetch('https://abacus.jasoncameron.dev/hit/amelu-picosas-site/visitas', { cache: 'no-store' }); } catch (e) {}
+})();
+</script>
+
 </body>
 </html>
